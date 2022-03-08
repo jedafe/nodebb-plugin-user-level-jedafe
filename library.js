@@ -4,18 +4,17 @@ const controllers = require('./lib/controllers');
 const helper = require.main.require('./src/controllers/helpers');
 const db = require.main.require('./src/database');
 const user = require.main.require('./src/user');
-const plugin = {};
+const meta = require.main.require('./src/meta');
+
+const plugin = module.exports;
 
 plugin.init = function (params, callback) {
-	const router = params.router;
-	const hostMiddleware = params.middleware;
-	// const hostControllers = params.controllers;
+	const { router , middleware } = params;
 
-	// We create two routes for every view. One API call, and the actual route itself.
-	// Just add the buildHeader middleware to your route and NodeBB will take care of everything for you.
+	const helpers = require.main.require('./src/routes/helpers');
 
-	router.get('/admin/plugins/user-level', hostMiddleware.admin.buildHeader, controllers.renderAdminPage);
-	router.get('/api/admin/plugins/user-level', controllers.renderAdminPage);
+	helpers.setupAdminPageRoute(router, '/admin/plugins/user-level', middleware, [], controllers.renderAdminPage);
+
 	router.post('/user-level/level',
 		// checkRegisterMiddleware,
 		getLevel)
@@ -34,6 +33,7 @@ plugin.addAdminNavigation = function (header, callback) {
 
 	callback(null, header);
 };
+
 var checkRegisterMiddleware = function (req, res, next) {
 	// console.log(req);
 	if (!req.loggedIn) {
@@ -43,8 +43,10 @@ var checkRegisterMiddleware = function (req, res, next) {
 		next();
 	}
 }
-var getLevel = async function (req, res) {
+
+async function getLevel(req, res) {
 	var levelList = await db.client.collection('objects').find({ _key: /settings:user-level:sorted-list:level-list:/ }).toArray();
+
 	levelList.map(e => e['min-reputation'] = parseInt(e['min-reputation']))
 	levelList.sort((a, b) => {
 		return b['min-reputation'] - a['min-reputation']
@@ -68,8 +70,10 @@ var getLevel = async function (req, res) {
 	}
 	return res.status(200).send(level);
 }
-var getLevelList = async function (req, res) {
+
+async function getLevelList(req, res) {
 	var levelList = await db.client.collection('objects').find({ _key: /settings:user-level:sorted-list:level-list:/ }).toArray();
+
 	levelList.map(e => e['min-reputation'] = parseInt(e['min-reputation']))
 	// console.log(levelList)
 	levelList.sort((a, b) => {
@@ -99,4 +103,3 @@ var getLevelList = async function (req, res) {
 	})
 	return res.status(200).send(result);
 }
-module.exports = plugin;

@@ -2,8 +2,6 @@
 
 /* globals document, $ */
 
-$(document).ready(function () {
-});
 $(window).on('action:ajaxify.end', function (event, data) {
 	require(['translator'], function (translator) {
 		var translate = function () {
@@ -80,6 +78,6 @@ $(window).on('action:ajaxify.end', function (event, data) {
 					})
 				})
 		}
-	})
-})
+	});
+});
 

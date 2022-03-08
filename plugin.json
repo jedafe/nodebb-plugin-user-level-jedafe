@@ -12,19 +12,15 @@
 			"hook": "filter:admin.header.build", "method": "addAdminNavigation"
 		}
 	],
-	"staticDirs": {
-		"static": "./static"
-	},
 	"less": [
 		"static/style.less"
 	],
 	"scripts": [
-		"static/lib/main.js",
 		"static/lib/topic.js",
 		"static/lib/user-account.js"
 	],
-	"acpScripts": [
-		"static/lib/admin.js"
-	],
+	"modules": {
+		"../admin/plugins/user-level.js": "static/lib/admin.js"
+	},
 	"templates": "static/templates"
 }
