@@ -1,32 +1,32 @@
-# Plugin thêm cấp độ cho người dùng và hỗ trợ hiển thị thông tin này
+# The plugin adds levels to the user and supports displaying this information
 
-Plugin cho phép tạo và chỉnh sửa danh sách các cấp độ cho người dùng
+The plugin allows creating and editing a list of levels for the user
 
-Plugin hiển thị cấp độ người dùng ở các bài viết và trang thông tin người dùng
+The plugin displays user levels in posts and user profile pages
 
-## Tạo và chỉnh sửa danh sách cấp độ người dùng
+## Create and edit user-level lists
 
-Để tạo danh sách này, admin có thể truy cập vào đường dẫn `/admin/plugins/user-level`
+To create this list, admin can access the path `/admin/plugins/user-level`
 
-Mỗi cấp độ người dùng cần có tên cấp và giá trị tối thiểu của điểm uy tín để đạt được cấp độ này
+Each level user needs a level name and a minimum value of reputation points to reach this level
 
-Thứ tự của các cấp người dùng có thể nằm lộn xộn (nhưng nên theo thứ tự để admins có thể dễ dàng quản lý)
+The order of user levels can be messy (but should be in order that admins can easily manage)
 ![Image](screenshots/admin.png?raw=true)
 
-## Hiển thị thông tin cấp độ người dùng
+## Show user level information
 
-### Thông tin ở các bài viết
+### Information in articles
 
-Thông tin này được hiển thị trước tên của người dùng
+This information is displayed before the user's name
 ![Image](screenshots/post-line.png?raw=true)
 
-Các thông tin thêm bao gồm:
-* Số điểm uy tín hiện có / số điểm uy tín cần có để đến cấp tiếp theo
-* Cấp độ tiếp theo
+Additional information includes:
+* Number of prestige points available / number of prestige points required to get to the next level
+* The next level
 ![Image](screenshots/post-line-more.png?raw=true)
 
-### Thông tin ở trang thông tin người dùng
+### Information on the user information page
 
-Thông tin được hiển thị giữa họ tên (fullname) của người dùng và tên người dùng (username)
+Information displayed between the user's full name and the username
 ![Image](screenshots/profile.png?raw=true)
 
