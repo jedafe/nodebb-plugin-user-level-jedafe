@@ -1,6 +1,6 @@
 {
   "name": "@nodebb/nodebb-plugin-user-level",
-  "version": "0.4.2",
+  "version": "1.0.0",
   "description": "A plugin to add user level",
   "main": "library.js",
   "repository": {
@@ -32,9 +32,9 @@
   },
   "maintainers": [
     {
-        "name": "Barış Soner Uşaklı",
-        "email": "baris@nodebb.org",
-        "url": "https://github.com/barisusakli"
+      "name": "Barış Soner Uşaklı",
+      "email": "baris@nodebb.org",
+      "url": "https://github.com/barisusakli"
     },
     {
       "name": "lamcuongdat",
