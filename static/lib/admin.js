@@ -1,9 +1,7 @@
 'use strict';
 
-/* globals $, app, socket, define, config */
-
 define('admin/plugins/user-level', [
-	'settings', 'alerts'
+	'settings', 'alerts',
 ], function (settings, alerts) {
 	var ACP = {};
 

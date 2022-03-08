@@ -9,10 +9,11 @@
     "admin-item-edit":"Edit",
     "admin-delete":"Delete",
 
-    "topic-REPUTATION":"REPUTATION",
-    "topic-next-level":"Next level",
+    "topic-REPUTATION-progress":"REPUTATION: %1 / %2",
+    "topic-REPUTATION": "REPUTATION: %1",
+    "topic-next-level":"Next level: %1",
     "highest-level":"Highest level",
-    "level":"Level",
+    "level":"Level %1: %2",
 
-    "user-account-popover":"more reputation point(s) to reach level"
+    "user-account-popover":"%1 more reputation point(s) to reach level %2"
 }

@@ -5,12 +5,10 @@
 	"languages": "languages",
 	"defaultLang": "en-GB",
 	"hooks": [
-		{
-			"hook": "static:app.load", "method": "init"
-		},
-		{
-			"hook": "filter:admin.header.build", "method": "addAdminNavigation"
-		}
+		{ "hook": "static:app.load", "method": "init" },
+		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
+		{ "hook": "filter:account/profile.build", "method": "filterAccountProfileBuild" },
+		{ "hook": "filter:topic.getPosts", "method": "filterTopicGetPosts" }
 	],
 	"less": [
 		"static/style.less"
