@@ -1,9 +1,8 @@
 'use strict';
 
 $(window).on('action:topic.loaded action:posts.loaded', async function (ev, data) {
-	const translator = await app.require('translator');
-
 	if (ajaxify.data.template.name === 'topic') {
+		const translator = await app.require('translator');
 		await Promise.all(data.posts.map(async (post) => {
 			if (post && post.user && post.user.level) {
 				const currentLevel = post.user.level;
