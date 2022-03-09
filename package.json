@@ -49,6 +49,9 @@
   "nbbpm": {
     "compatibility": "^1.9.3"
   },
+  "dependencies": {
+    "validator": "13.7.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "16.2.1",
     "@commitlint/config-angular": "16.2.1",

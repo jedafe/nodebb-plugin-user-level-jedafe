@@ -4,7 +4,7 @@ $(window).on('action:ajaxify.end', async function () {
 	if (ajaxify.data.template.name === 'account/profile') {
 		const translator = await app.require('translator');
 		const currentLevel = ajaxify.data.level;
-		if (!currentLevel) {
+		if (!currentLevel || !currentLevel['level-name']) {
 			return;
 		}
 

@@ -11,6 +11,8 @@ plugin.init = function (params, callback) {
 
 	const helpers = require.main.require('./src/routes/helpers');
 
+	helpers.setupPageRoute(router, '/user-levels', middleware, [], controllers.renderUserLevelsPage);
+
 	helpers.setupAdminPageRoute(router, '/admin/plugins/user-level', middleware, [], controllers.renderAdminPage);
 
 	callback();
@@ -48,7 +50,9 @@ plugin.filterPostsGetUserInfoForPosts = async (hookData) => {
 plugin.filterAccountProfileBuild = async (hookData) => {
 	const levelList = await getLevelList();
 	hookData.templateData.level = levelList.find(l => l['min-reputation'] <= hookData.templateData.reputation);
-	hookData.templateData.level.reputation = hookData.templateData.reputation;
+	if (hookData.templateData.level) {
+		hookData.templateData.level.reputation = hookData.templateData.reputation;
+	}
 	return hookData;
 };
 

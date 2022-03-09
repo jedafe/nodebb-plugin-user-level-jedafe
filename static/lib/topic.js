@@ -4,7 +4,7 @@ $(window).on('action:topic.loaded action:posts.loaded', async function (ev, data
 	if (ajaxify.data.template.name === 'topic') {
 		const translator = await app.require('translator');
 		await Promise.all(data.posts.map(async (post) => {
-			if (post && post.user && post.user.level) {
+			if (post && post.user && post.user.level && post.user.level['level-name']) {
 				const currentLevel = post.user.level;
 				const postEl = $(`[component="post"][data-pid=${post.pid}]`);
 				const popoverContent = $('<div/>', {});
