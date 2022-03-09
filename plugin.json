@@ -8,7 +8,7 @@
 		{ "hook": "static:app.load", "method": "init" },
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
 		{ "hook": "filter:account/profile.build", "method": "filterAccountProfileBuild" },
-		{ "hook": "filter:topic.getPosts", "method": "filterTopicGetPosts" }
+		{ "hook": "filter:posts.getUserInfoForPosts", "method": "filterPostsGetUserInfoForPosts"}
 	],
 	"less": [
 		"static/style.less"

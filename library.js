@@ -32,13 +32,13 @@ async function getLevelList() {
 	return levelList;
 }
 
-plugin.filterTopicGetPosts = async (hookData) => {
+plugin.filterPostsGetUserInfoForPosts = async (hookData) => {
 	const levelList = await getLevelList();
-	hookData.posts.forEach((post) => {
-		if (post && post.user) {
-			post.user.level = {
-				...levelList.find(l => l['min-reputation'] <= post.user.reputation),
-				reputation: post.user.reputation,
+	hookData.users.forEach((user) => {
+		if (user) {
+			user.level = {
+				...levelList.find(l => l['min-reputation'] <= user.reputation),
+				reputation: user.reputation,
 			};
 		}
 	});
