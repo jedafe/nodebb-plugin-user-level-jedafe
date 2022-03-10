@@ -24,7 +24,7 @@ $(window).on('action:topic.loaded action:posts.loaded', async function (ev, data
 				popoverContent.append(description);
 				const title = await translator.translate(`[[userlevel:level, ${currentLevel['level-index']}, ${currentLevel['level-name']}]]`);
 				const div = $('<a/>', {
-					class: 'user-level-topic',
+					class: `user-level-topic user-level-rank-${currentLevel['level-index']}`,
 					title: title,
 					'data-toggle': 'popover',
 					'data-placement': 'top',
