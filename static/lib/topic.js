@@ -29,9 +29,10 @@ $(window).on('action:topic.loaded action:posts.loaded', async function (ev, data
 					class: `user-level-topic fw-bold user-level-rank-${currentLevel['level-index']} text-decoration-none`,
 					title: title,
 					tabindex: 0,
+					'data-bs-container': '#content',
 					'data-bs-toggle': 'popover',
 					'data-bs-placement': 'top',
-					// 'data-bs-trigger': 'focus',
+					'data-bs-trigger': 'focus',
 					'data-bs-content': popoverContent.get(0).outerHTML,
 					'data-bs-html': true,
 				});
