@@ -23,14 +23,25 @@ $(window).on('action:ajaxify.end', async function () {
 			class: 'level-index',
 		});
 		const content = $('<div/>', {
-			'data-toggle': 'popover',
-			'data-content': divStatLable.get(0).outerHTML,
-			'data-html': true,
+			'data-bs-toggle': 'popover',
+			'data-bs-content': divStatLable.get(0).outerHTML,
+			'data-bs-html': true,
 		});
 		const text = await translator.translate(`[[userlevel:level, ${currentLevel['level-index']}, ${currentLevel['level-name']}]]`);
 		content.text(text);
 		divReadNumber.append(content);
-		divReadNumber.insertAfter('.profile .fullname');
-		$('[data-toggle="popover"]').popover();
+		const badgeArea = $('[component="user/badges"]');
+		if (badgeArea.length) {
+			// divReadNumber.append(badgeArea);
+			badgeArea.append(divReadNumber);
+		} else if ($('.profile .fullname').length) {
+			// fallbacks for themes that don't have above component
+			divReadNumber.insertAfter('.profile .fullname');
+		} else if ($('.account .fullname').length) {
+			// fallbacks for themes that don't have above component
+			divReadNumber.insertAfter('.account .fullname');
+		}
+
+		$('[data-bs-toggle="popover"]').popover();
 	}
 });

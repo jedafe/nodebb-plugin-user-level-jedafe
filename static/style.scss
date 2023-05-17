@@ -1,0 +1,26 @@
+
+.user-level-topic {
+  display: inline-block;
+  padding: 1px 5px;
+  color: $link-color;
+  border: 2px solid $link-color;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 8px 0 0;
+}
+
+.popover-body {
+  font-weight: bold;
+  color: $text-muted;
+}
+
+.level-index {
+  text-align: center;
+}
+.level-index>div:first-child {
+  display: inline-block;
+  padding: 3px 7px;
+  font-weight: bold;
+  cursor: pointer;
+  border: solid;
+}

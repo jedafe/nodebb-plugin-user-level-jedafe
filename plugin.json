@@ -10,8 +10,8 @@
 		{ "hook": "filter:account/profile.build", "method": "filterAccountProfileBuild" },
 		{ "hook": "filter:posts.getUserInfoForPosts", "method": "filterPostsGetUserInfoForPosts"}
 	],
-	"less": [
-		"static/style.less"
+	"scss": [
+		"static/style.scss"
 	],
 	"scripts": [
 		"static/lib/topic.js",

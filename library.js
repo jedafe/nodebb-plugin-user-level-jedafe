@@ -7,13 +7,13 @@ const meta = require.main.require('./src/meta');
 const plugin = module.exports;
 
 plugin.init = function (params, callback) {
-	const { router, middleware } = params;
+	const { router } = params;
 
 	const helpers = require.main.require('./src/routes/helpers');
 
-	helpers.setupPageRoute(router, '/user-levels', middleware, [], controllers.renderUserLevelsPage);
+	helpers.setupPageRoute(router, '/user-levels', controllers.renderUserLevelsPage);
 
-	helpers.setupAdminPageRoute(router, '/admin/plugins/user-level', middleware, [], controllers.renderAdminPage);
+	helpers.setupAdminPageRoute(router, '/admin/plugins/user-level', controllers.renderAdminPage);
 
 	callback();
 };

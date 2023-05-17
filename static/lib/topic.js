@@ -9,7 +9,7 @@ $(window).on('action:topic.loaded action:posts.loaded', async function (ev, data
 				const postEl = $(`[component="post"][data-pid=${post.pid}]`);
 				const popoverContent = $('<div/>', {});
 				const description = $('<div/>', {
-					class: 'small',
+					class: 'text-sm fw-normal',
 				});
 				if (currentLevel['next-level']) {
 					const text = await translator.translate(`[[userlevel:topic-REPUTATION-progress, ${currentLevel.reputation}, ${currentLevel['next-level']['min-reputation']}]]`);
@@ -22,20 +22,24 @@ $(window).on('action:topic.loaded action:posts.loaded', async function (ev, data
 					description.text(await translator.translate('[[userlevel:highest-level]]'));
 				}
 				popoverContent.append(description);
+				console.log(description);
 				const title = await translator.translate(`[[userlevel:level, ${currentLevel['level-index']}, ${currentLevel['level-name']}]]`);
+
 				const div = $('<a/>', {
-					class: `user-level-topic user-level-rank-${currentLevel['level-index']}`,
+					class: `user-level-topic fw-bold user-level-rank-${currentLevel['level-index']} text-decoration-none`,
 					title: title,
-					'data-toggle': 'popover',
-					'data-placement': 'top',
-					'data-content': popoverContent.get(0).outerHTML,
-					'data-html': true,
+					tabindex: 0,
+					'data-bs-toggle': 'popover',
+					'data-bs-placement': 'top',
+					// 'data-bs-trigger': 'focus',
+					'data-bs-content': popoverContent.get(0).outerHTML,
+					'data-bs-html': true,
 				});
 				const levelName = await translator.translate(currentLevel['level-name']);
 				div.html(levelName).insertBefore(postEl.find('.post-header a[data-username]'));
 			}
 		}));
-		$('[data-toggle="popover"]').popover();
+		$('[data-bs-toggle="popover"]').popover();
 	}
 });
 
