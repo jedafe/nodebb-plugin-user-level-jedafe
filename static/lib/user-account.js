@@ -24,6 +24,9 @@ $(window).on('action:ajaxify.end', async function () {
 		});
 		const content = $('<div/>', {
 			'data-bs-toggle': 'popover',
+			'data-bs-container': '#content',
+			'data-bs-trigger': 'focus',
+			tabindex: 0,
 			'data-bs-content': divStatLable.get(0).outerHTML,
 			'data-bs-html': true,
 		});
