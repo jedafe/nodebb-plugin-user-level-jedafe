@@ -22,7 +22,7 @@ $(window).on('action:topic.loaded action:posts.loaded', async function (ev, data
 					description.text(await translator.translate('[[userlevel:highest-level]]'));
 				}
 				popoverContent.append(description);
-				console.log(description);
+
 				const title = await translator.translate(`[[userlevel:level, ${currentLevel['level-index']}, ${currentLevel['level-name']}]]`);
 
 				const div = $('<a/>', {
