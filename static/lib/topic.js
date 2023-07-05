@@ -15,19 +15,18 @@ $(window).on('action:topic.loaded action:posts.loaded', async function (ev, data
 					const text = await translator.translate(`[[userlevel:topic-REPUTATION-progress, ${currentLevel.reputation}, ${currentLevel['next-level']['min-reputation']}]]`);
 					popoverContent.text(text);
 					const descText = await translator.translate(`[[userlevel:topic-next-level, ${currentLevel['next-level']['level-name']}]]`);
-					description.text(descText);
+					description.html(utils.decodeHTMLEntities(descText));
 				} else {
 					const text = await translator.translate(`[[userlevel:topic-REPUTATION, ${currentLevel.reputation}]]`);
 					popoverContent.text(text);
-					description.text(await translator.translate('[[userlevel:highest-level]]'));
+					description.html(await translator.translate('[[userlevel:highest-level]]'));
 				}
 				popoverContent.append(description);
 
 				const title = await translator.translate(`[[userlevel:level, ${currentLevel['level-index']}, ${currentLevel['level-name']}]]`);
-
 				const div = $('<a/>', {
 					class: `user-level-topic fw-bold user-level-rank-${currentLevel['level-index']} text-decoration-none`,
-					title: title,
+					title: utils.decodeHTMLEntities(title),
 					tabindex: 0,
 					'data-bs-container': '#content',
 					'data-bs-toggle': 'popover',

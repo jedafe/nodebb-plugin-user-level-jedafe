@@ -8,16 +8,16 @@ $(window).on('action:ajaxify.end', async function () {
 			return;
 		}
 
-		const divStatLable = $('<div/>', {
+		const divStatLabel = $('<div/>', {
 			class: 'level-description',
 		});
 		if (currentLevel['next-level']) {
 			const diff = currentLevel['next-level']['min-reputation'] - currentLevel.reputation;
 			const text = await translator.translate(`[[userlevel:user-account-popover, ${diff}, ${currentLevel['next-level']['level-name']}]]`);
-			divStatLable.text(text);
+			divStatLabel.html(utils.decodeHTMLEntities(text));
 		} else {
 			const text = await translator.translate('[[userlevel:highest-level]]');
-			divStatLable.text(text);
+			divStatLabel.html(text);
 		}
 		const divReadNumber = $('<div/>', {
 			class: 'level-index',
@@ -27,11 +27,11 @@ $(window).on('action:ajaxify.end', async function () {
 			'data-bs-container': '#content',
 			'data-bs-trigger': 'focus',
 			tabindex: 0,
-			'data-bs-content': divStatLable.get(0).outerHTML,
+			'data-bs-content': divStatLabel.get(0).outerHTML,
 			'data-bs-html': true,
 		});
 		const text = await translator.translate(`[[userlevel:level, ${currentLevel['level-index']}, ${currentLevel['level-name']}]]`);
-		content.text(text);
+		content.html(utils.decodeHTMLEntities(text));
 		divReadNumber.append(content);
 		const badgeArea = $('[component="user/badges"]');
 		if (badgeArea.length) {
