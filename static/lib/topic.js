@@ -36,7 +36,12 @@ $(window).on('action:topic.loaded action:posts.loaded', async function (ev, data
 					'data-bs-html': true,
 				});
 				const levelName = await translator.translate(currentLevel['level-name']);
-				div.html(levelName).insertBefore(postEl.find('.post-header a[data-username]'));
+				postEl.each((i, el) => {
+					const $el = $(el);
+					if (!$el.find('.user-level-topic').length) {
+						div.html(levelName).insertBefore($el.find('.post-header a[data-username]'));
+					}
+				});
 			}
 		}));
 		$('[data-bs-toggle="popover"]').popover();
