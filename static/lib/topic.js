@@ -25,6 +25,7 @@ $(window).on('action:topic.loaded action:posts.loaded', async function (ev, data
 
 				const title = await translator.translate(`[[userlevel:level, ${currentLevel['level-index']}, ${currentLevel['level-name']}]]`);
 				const div = $('<a/>', {
+					href: '#',
 					class: `user-level-topic fw-bold user-level-rank-${currentLevel['level-index']} text-decoration-none`,
 					title: utils.decodeHTMLEntities(title),
 					tabindex: 0,
