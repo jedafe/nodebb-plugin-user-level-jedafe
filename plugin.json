@@ -1,6 +1,6 @@
 {
 	"id": "nodebb-plugin-user-level-jedafe",
-	"url": "https://github.com/NodeBB/nodebb-plugin-user-level-jedafe",
+	"url": "https://github.com/jedafe/nodebb-plugin-user-level-jedafe",
 	"library": "./library.js",
 	"languages": "languages",
 	"defaultLang": "en-GB",
