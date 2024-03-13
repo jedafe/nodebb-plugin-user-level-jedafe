@@ -1,11 +1,11 @@
 {
-  "name": "@nodebb/nodebb-plugin-user-level",
+  "name": "@nodebb/nodebb-plugin-user-level-jedafe",
   "version": "2.1.2",
   "description": "A plugin to add user level",
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NodeBB-Community/nodebb-plugin-user-level"
+    "url": "https://github.com/NodeBB-Community/nodebb-plugin-user-level-jedafe"
   },
   "scripts": {
     "lint": "eslint ."
@@ -43,7 +43,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NodeBB-Community/nodebb-plugin-user-level/issues"
+    "url": "https://github.com/NodeBB-Community/nodebb-plugin-user-level-jedafe/issues"
   },
   "readmeFilename": "README.md",
   "nbbpm": {
