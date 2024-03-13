@@ -5,7 +5,7 @@
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/NodeBB-Community/nodebb-plugin-user-level-jedafe"
+    "url": "https://github.com/jedafe/nodebb-plugin-user-level-jedafe"
   },
   "scripts": {
     "lint": "eslint ."
@@ -43,7 +43,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NodeBB-Community/nodebb-plugin-user-level-jedafe/issues"
+    "url": "https://github.com/jedafe/nodebb-plugin-user-level-jedafe/issues"
   },
   "readmeFilename": "README.md",
   "nbbpm": {
